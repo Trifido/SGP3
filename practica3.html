@@ -1,0 +1,463 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title> Practica3.1 SG </title>
+        <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+		<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'/>
+	</head>
+	</head>
+       
+	<body>		
+			<!-- <X3D>
+				<Scene DEF='scene'>
+					<Viewpoint position='16.0328 13.056 34.2417' orientation='-0.624839 0.780206 0.0292506 0.543473' />
+					<Background skyColor='1 1 1'/>
+					
+				</Scene>
+			</X3D> -->
+		<X3D width="1350px" height="600px">
+			<Scene>
+				<NavigationInfo headlight='false'></NavigationInfo>
+				<Viewpoint description="Faceted box, smooth shading" position="0 0 25"></Viewpoint>
+				<PointLight DEF="Lamp1" color="1 1 0" location="0 0 0" radius="15"/></PointLight>
+				<!--<PointLight DEF="Lamp2" color="1 1 0" location="0 0 6" radius="15"/>
+			
+				<!-- SOL -->
+				<Transform DEF='RotacionSol'>
+					<Shape DEF='Sol'>
+						<appearance>
+							<ImageTexture url="img/sun.jpg"/> 
+							<Material  emissiveColor='0.8 0.8 0.2' ambientIntensity='1.0'/>
+						</appearance>
+						<Sphere radius='6' solid='true'/>
+					</Shape>
+				</Transform>
+				
+				<!-- MERCURIO -->
+				<Transform DEF='OrbitaMercurio'>
+					<Transform DEF='DesplazaOrbitaMercurio' translation="-9.5 0 0">
+						<Transform DEF='RotacionMercurio'>
+							<Shape DEF='Mercurio'>
+								<appearance>
+									<ImageTexture url="img/mercurio.jpg"/>
+								</appearance>
+								<Sphere radius='0.4' solid='true'/>
+							</Shape>
+						</Transform>
+					</Transform>
+				</Transform>	
+
+				<!-- VENUS -->
+				<Transform DEF='OrbitaVenus'>
+					<Transform DEF='DesplazaOrbitaVenus' translation="-12 0 0">
+						<Transform DEF='RotacionVenus'>
+							<Shape DEF='Venus'>
+								<appearance>
+									<ImageTexture url="img/venus.jpg"/>
+								</appearance>
+								<Sphere radius='0.9' solid='true'/>
+							</Shape>
+						</Transform>
+					</Transform>
+				</Transform>
+				
+				<!-- TIERRA -->
+				<Transform DEF='OrbitaTierra'>
+					<Transform DEF='DesplazaOrbitaTierra' translation="15 0 0">
+						<Transform DEF='RotacionTierra'>
+							<Shape DEF='Tierra'>
+								<appearance>
+									<ImageTexture url="img/earth.jpg"/>
+								</appearance>
+								<Sphere radius='1' solid='true'/>
+							</Shape>
+						</Transform>
+						
+				<!--LUNA -->
+						<Transform DEF='OrbitaLuna'>
+							<Transform DEF='DesplazaOrbitaLuna' translation="1.5 0 0">
+								<Transform DEF='RotacionLuna'>
+									<Shape DEF='Luna'>
+										<appearance>
+											<ImageTexture url="img/moon.jpg"/>
+										</appearance>
+										<Sphere radius='0.3' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+				
+				<!-- MARTE -->
+				<Transform DEF='OrbitaMarte'>
+					<Transform DEF='DesplazaOrbitaMarte' translation="-20 0 0">
+						<Transform DEF='RotacionMarte'>
+							<Shape DEF='Marte'>
+								<appearance>
+									<ImageTexture url="img/marte.jpg"/>
+								</appearance>
+								<Sphere radius='0.9' solid='true'/>
+							</Shape>
+						</Transform>
+						
+				<!--DEIMOS -->
+						<Transform DEF='OrbitaDeimos'>
+							<Transform DEF='DesplazaOrbitaDeimos' translation="-2.5 0 0">
+								<Transform DEF='RotacionDeimos'>
+									<Shape DEF='Deimos'>
+										<appearance>
+											<ImageTexture url="img/deimos.jpg"/>
+										</appearance>
+										<Sphere radius='0.2' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+				<!--FOBOS -->
+						<Transform DEF='OrbitaFobos'>
+							<Transform DEF='DesplazaOrbitaFobos' translation="1.5 0 0">
+								<Transform DEF='RotacionFobos'>
+									<Shape DEF='Fobos'>
+										<appearance>
+											<ImageTexture url="img/phobos.jpg"/>
+										</appearance>
+										<Sphere radius='0.4' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+				<!--JUPITER -->
+				<Transform DEF='OrbitaJupiter'>
+					<Transform DEF='DesplazaOrbitaJupiter' translation="-36 0 0">
+						<Transform DEF='RotacionJupiter'>
+							<Shape DEF='Jupiter'>
+								<appearance>
+									<ImageTexture url="img/jupiter.jpg"/>
+								</appearance>
+								<Sphere radius='3' solid='true'/>
+							</Shape>
+						</Transform>
+						<!--IO -->
+						<Transform DEF='OrbitaIo'>
+							<Transform DEF='DesplazaOrbitaIo' translation="4 0 0">
+								<Transform DEF='RotacionIo'>
+									<Shape DEF='Io'>
+										<appearance>
+											<ImageTexture url="img/io.jpg"/>
+										</appearance>
+										<Sphere radius='0.3' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!--EUROPA -->
+						<Transform DEF='OrbitaEuropa'>
+							<Transform DEF='DesplazaOrbitaEuropa' translation="-4 0 0">
+								<Transform DEF='RotacionEuropa'>
+									<Shape DEF='Europa'>
+										<appearance>
+											<ImageTexture url="img/europa.jpg"/>
+										</appearance>
+										<Sphere radius='0.2' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!--GANÍMEDES -->
+						<Transform DEF='OrbitaGanimedes'>
+							<Transform DEF='DesplazaOrbitaGanimedes' translation="5.5 0 0">
+								<Transform DEF='RotacionGanimedes'>
+									<Shape DEF='Ganimedes'>
+										<appearance>
+											<ImageTexture url="img/ganimedes.jpg"/>
+										</appearance>
+										<Sphere radius='0.5' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!--CALISTO -->
+						<Transform DEF='OrbitaCalisto'>
+							<Transform DEF='DesplazaOrbitaCalisto' translation="-6.5 0 0">
+								<Transform DEF='RotacionCalisto'>
+									<Shape DEF='Calisto'>
+										<appearance>
+											<ImageTexture url="img/calisto.jpg"/>
+										</appearance>
+										<Sphere radius='0.4' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+				<!-- SATURNO -->
+				<Transform DEF='OrbitaSaturno'>
+					<Transform DEF='DesplazaOrbitaSaturno' translation="44 0 0">
+						<Transform DEF='RotacionSaturno'>
+							<Shape DEF='Saturno'>
+								<appearance>
+									<ImageTexture url="img/saturno.jpg"/>
+								</appearance>
+								<Sphere radius='1.5' solid='true'/>
+							</Shape>
+						</Transform>
+						<Shape DEF='DiscoSaturno'>
+							<Appearance>
+								<ImageTexture url="img/anillo.jpg"/>
+								<Material transparency='0.6'/>	
+							</Appearance>
+								<Cone bottomRadius='4' height='.001' bottom='false' side='true' solid='false'/>
+						</Shape>
+					</Transform>
+				</Transform>
+				<!-- URANO -->
+				<Transform DEF='OrbitaUrano'>
+					<Transform DEF='DesplazaOrbitaUrano' translation="-52 0 0">
+						<Transform DEF='RotacionUrano'>
+							<Shape DEF='Urano'>
+								<appearance>
+									<ImageTexture url="img/urano.png"/>
+								</appearance>
+								<Sphere radius='1.1' solid='true'/>
+							</Shape>
+						</Transform>
+						<Shape DEF='DiscoUrano'>
+							<Appearance>
+								<ImageTexture url="img/anilloU.png"/>
+								<Material transparency='0.6'/>	
+							</Appearance>
+								<Cone bottomRadius='2.5' height='.001' bottom='false' side='true' solid='false'/>
+						</Shape>
+						<!--Miranda -->
+						<Transform DEF='OrbitaMiranda'>
+							<Transform DEF='DesplazaOrbitaMiranda' translation="2.8 0 0">
+								<Transform DEF='RotacionMiranda'>
+									<Shape DEF='Miranda'>
+										<appearance>
+											<ImageTexture url="img/miranda.jpg"/>
+										</appearance>
+										<Sphere radius='0.1' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!--ARIEL -->
+						<Transform DEF='OrbitaAriel'>
+							<Transform DEF='DesplazaOrbitaAriel' translation="-3.5 0 0">
+								<Transform DEF='RotacionAriel'>
+									<Shape DEF='Ariel'>
+										<appearance>
+											<ImageTexture url="img/ariel.jpg"/>
+										</appearance>
+										<Sphere radius='0.3' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!-- UMBRIEL -->
+						<Transform DEF='OrbitaUmbriel'>
+							<Transform DEF='DesplazaOrbitaUmbriel' translation="4.2 0 0">
+								<Transform DEF='RotacionUmbriel'>
+									<Shape DEF='Umbriel'>
+										<appearance>
+											<ImageTexture url="img/umbriel.jpg"/>
+										</appearance>
+										<Sphere radius='0.3' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!-- TITANIA -->
+						<Transform DEF='OrbitaTitania'>
+							<Transform DEF='DesplazaOrbitaTitania' translation="-4.8 0 0">
+								<Transform DEF='RotacionTitania'>
+									<Shape DEF='Titania'>
+										<appearance>
+											<ImageTexture url="img/titania.jpg"/>
+										</appearance>
+										<Sphere radius='0.5' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+						<!-- OBERÓN -->
+						<Transform DEF='OrbitaOberon'>
+							<Transform DEF='DesplazaOrbitaOberon' translation="5.5 0 0">
+								<Transform DEF='RotacionOberon'>
+									<Shape DEF='Oberon'>
+										<appearance>
+											<ImageTexture url="img/oberon.jpg"/>
+										</appearance>
+										<Sphere radius='0.4' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+				<!-- NEPTUNO -->
+				<Transform DEF='OrbitaNeptuno'>
+					<Transform DEF='DesplazaOrbitaNeptuno' translation="58 0 0">
+						<Transform DEF='RotacionNeptuno'>
+							<Shape DEF='Neptuno'>
+								<appearance>
+									<ImageTexture url="img/neptuno.jpg"/>
+								</appearance>
+								<Sphere radius='1' solid='true'/>
+							</Shape>
+						</Transform>
+				<!--TRITON -->
+						<Transform DEF='OrbitaTriton'>
+							<Transform DEF='DesplazaOrbitaTriton' translation="1.6 0 0">
+								<Transform DEF='RotacionTriton'>
+									<Shape DEF='Triton'>
+										<appearance>
+											<ImageTexture url="img/triton.jpg"/>
+										</appearance>
+										<Sphere radius='0.4' solid='true'/>
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+				
+					
+				
+				<TimeSensor DEF='clockSol' cycleInterval='80' loop='true'/>
+				<TimeSensor DEF='clockRotacion' cycleInterval='5' loop='true'/>
+				<TimeSensor DEF='clockOrbitaMercurio' cycleInterval='10' loop='true'/>
+				<TimeSensor DEF='clockOrbitaVenus' cycleInterval='20' loop='true'/>
+				<TimeSensor DEF='clockOrbitaTierra' cycleInterval='30' loop='true'/>
+				<TimeSensor DEF='clockOrbitaMarte' cycleInterval='35' loop='true'/>
+				<TimeSensor DEF='clockOrbitaJupiter' cycleInterval='40' loop='true'/>
+				<TimeSensor DEF='clockOrbitaSatelite1' cycleInterval='2' loop='true'/>
+				<TimeSensor DEF='clockOrbitaSatelite2' cycleInterval='5' loop='true'/>
+				<TimeSensor DEF='clockOrbitaSatelite3' cycleInterval='8' loop='true'/>
+				<TimeSensor DEF='clockOrbitaSaturno' cycleInterval='50' loop='true'/>
+				<TimeSensor DEF='clockOrbitaUrano' cycleInterval='55' loop='true'/>
+				<TimeSensor DEF='clockOrbitaNeptuno' cycleInterval='50' loop='true'/>
+				
+				<OrientationInterpolator DEF='interRotacion' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interRotacionEjePlaneta' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaMercurio' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaVenus' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaTierra' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaLuna' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaMarte' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaFobos' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaDeimos' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaJupiter' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaIo' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaEuropa' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaGanimedes' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaCalisto' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaSaturno' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaUrano' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaMiranda' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaAriel' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaUmbriel' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaTitania' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaOberon' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaNeptuno' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interOrbitaTriton' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				
+				<!-- Rotacion sobre su eje del Sol-->
+				<ROUTE fromNode='clockSol' fromField='fraction_changed' toNode='interRotacion' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interRotacion' fromField='value_changed' toNode='RotacionSol' toField='set_rotation'></ROUTE>
+				<!-- Rotacion sobre su eje de: Mercurio, Venus, Tierra, Luna, Marte, Fobos, Deimos, .....-->
+				<ROUTE fromNode='clockRotacion' fromField='fraction_changed' toNode='interRotacionEjePlaneta' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionVenus' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionTierra' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionLuna' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionMercurio' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionMarte' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionFobos' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionDeimos' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionJupiter' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionIo' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionEuropa' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionGanimedes' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionCalisto' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionSaturno' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionUrano' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionMiranda' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionAriel' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionUmbriel' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionTitania' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionOberon' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionNeptuno' toField='set_rotation'></ROUTE>
+				<ROUTE fromNode='interRotacionEjePlaneta' fromField='value_changed' toNode='RotacionTriton' toField='set_rotation'></ROUTE>
+				
+				<!-- Orbita de Mercurio -->
+				<ROUTE fromNode='clockOrbitaMercurio' fromField='fraction_changed' toNode='interOrbitaMercurio' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaMercurio' fromField='value_changed' toNode='OrbitaMercurio' toField='set_rotation'></ROUTE>
+				<!-- Orbuta de Venus -->
+				<ROUTE fromNode='clockOrbitaVenus' fromField='fraction_changed' toNode='interOrbitaVenus' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaVenus' fromField='value_changed' toNode='OrbitaVenus' toField='set_rotation'></ROUTE>
+				<!-- Orbita de la Tierra -->
+				<ROUTE fromNode='clockOrbitaTierra' fromField='fraction_changed' toNode='interOrbitaTierra' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaTierra' fromField='value_changed' toNode='OrbitaTierra' toField='set_rotation'></ROUTE>
+				<!-- Orbita de la Luna -->
+				<ROUTE fromNode='clockOrbitaSatelite1' fromField='fraction_changed' toNode='interOrbitaLuna' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaLuna' fromField='value_changed' toNode='OrbitaLuna' toField='set_rotation'></ROUTE>				
+				<!-- Orbita de Marte -->
+				<ROUTE fromNode='clockOrbitaMarte' fromField='fraction_changed' toNode='interOrbitaMarte' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaMarte' fromField='value_changed' toNode='OrbitaMarte' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Fobos -->
+				<ROUTE fromNode='clockOrbitaSatelite1' fromField='fraction_changed' toNode='interOrbitaFobos' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaFobos' fromField='value_changed' toNode='OrbitaFobos' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Deimos -->
+				<ROUTE fromNode='clockOrbitaSatelite2' fromField='fraction_changed' toNode='interOrbitaDeimos' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaDeimos' fromField='value_changed' toNode='OrbitaDeimos' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Jupiter -->
+				<ROUTE fromNode='clockOrbitaJupiter' fromField='fraction_changed' toNode='interOrbitaJupiter' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaJupiter' fromField='value_changed' toNode='OrbitaJupiter' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Io -->
+				<ROUTE fromNode='clockOrbitaSatelite1' fromField='fraction_changed' toNode='interOrbitaIo' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaIo' fromField='value_changed' toNode='OrbitaIo' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Europa -->
+				<ROUTE fromNode='clockOrbitaSatelite1' fromField='fraction_changed' toNode='interOrbitaEuropa' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaEuropa' fromField='value_changed' toNode='OrbitaEuropa' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Ganimedes -->
+				<ROUTE fromNode='clockOrbitaSatelite2' fromField='fraction_changed' toNode='interOrbitaGanimedes' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaGanimedes' fromField='value_changed' toNode='OrbitaGanimedes' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Calisto -->
+				<ROUTE fromNode='clockOrbitaSatelite3' fromField='fraction_changed' toNode='interOrbitaCalisto' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaCalisto' fromField='value_changed' toNode='OrbitaCalisto' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Saturno -->
+				<ROUTE fromNode='clockOrbitaSaturno' fromField='fraction_changed' toNode='interOrbitaSaturno' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaSaturno' fromField='value_changed' toNode='OrbitaSaturno' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Urano -->
+				<ROUTE fromNode='clockOrbitaUrano' fromField='fraction_changed' toNode='interOrbitaUrano' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaUrano' fromField='value_changed' toNode='OrbitaUrano' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Miranda -->
+				<ROUTE fromNode='clockOrbitaSatelite1' fromField='fraction_changed' toNode='interOrbitaMiranda' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaMiranda' fromField='value_changed' toNode='OrbitaMiranda' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Ariel -->
+				<ROUTE fromNode='clockOrbitaSatelite2' fromField='fraction_changed' toNode='interOrbitaAriel' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaAriel' fromField='value_changed' toNode='OrbitaAriel' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Umbriel -->
+				<ROUTE fromNode='clockOrbitaSatelite2' fromField='fraction_changed' toNode='interOrbitaUmbriel' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaUmbriel' fromField='value_changed' toNode='OrbitaUmbriel' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Titania -->
+				<ROUTE fromNode='clockOrbitaSatelite3' fromField='fraction_changed' toNode='interOrbitaTitania' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaTitania' fromField='value_changed' toNode='OrbitaTitania' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Oberon -->
+				<ROUTE fromNode='clockOrbitaSatelite3' fromField='fraction_changed' toNode='interOrbitaOberon' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaOberon' fromField='value_changed' toNode='OrbitaOberon' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Neptuno -->
+				<ROUTE fromNode='clockOrbitaNeptuno' fromField='fraction_changed' toNode='interOrbitaNeptuno' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaNeptuno' fromField='value_changed' toNode='OrbitaNeptuno' toField='set_rotation'></ROUTE>
+				<!-- Orbita de Triton -->
+				<ROUTE fromNode='clockOrbitaSatelite2' fromField='fraction_changed' toNode='interOrbitaTriton' toField='set_fraction'></ROUTE>
+				<ROUTE fromNode='interOrbitaTriton' fromField='value_changed' toNode='OrbitaTriton' toField='set_rotation'></ROUTE>
+				
+			</Scene>
+		</X3D>
+	</body>
+</html>
