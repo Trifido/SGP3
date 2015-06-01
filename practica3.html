@@ -6,30 +6,103 @@
 		<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'/>
 	</head>
 	</head>
+	
+	<script type="text/javascript">
+		document.onload = function() {
+		//CLICK SOL
+		document.getElementById('Sol').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockSol').getAttribute('enabled') == 'true' )
+					document.getElementById('clockSol').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockSol').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK MERCURIO
+		document.getElementById('Mercurio').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockMercurio').getAttribute('enabled') == 'true' )
+					document.getElementById('clockMercurio').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockMercurio').setAttribute('enabled', 'true');
+			}, false);	
+		//CLICK VENUS
+		document.getElementById('Venus').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockVenus').getAttribute('enabled') == 'true' )
+					document.getElementById('clockVenus').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockVenus').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK TIERRA
+		document.getElementById('Tierra').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockTierra').getAttribute('enabled') == 'true' )
+					document.getElementById('clockTierra').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockTierra').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK MARTE
+		document.getElementById('Marte').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockMarte').getAttribute('enabled') == 'true' )
+					document.getElementById('clockMarte').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockMarte').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK JUPITER
+		document.getElementById('Jupiter').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockJupiter').getAttribute('enabled') == 'true' )
+					document.getElementById('clockJupiter').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockJupiter').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK SATURNO
+		document.getElementById('Saturno').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockSaturno').getAttribute('enabled') == 'true' )
+					document.getElementById('clockSaturno').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockSaturno').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK URANO
+		document.getElementById('Urano').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockUrano').getAttribute('enabled') == 'true' )
+					document.getElementById('clockUrano').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockUrano').setAttribute('enabled', 'true');
+			}, false);
+		//CLICK NEPTUNO
+		document.getElementById('Neptuno').addEventListener('click',
+			function() { 
+				if(document.getElementById('clockNeptuno').getAttribute('enabled') == 'true' )
+					document.getElementById('clockNeptuno').setAttribute('enabled', 'false');
+				else
+					document.getElementById('clockNeptuno').setAttribute('enabled', 'true');
+			}, false);
+		
+
+		};
+	</script>
+	
        
 	<body>		
-			<!-- <X3D>
-				<Scene DEF='scene'>
-					<Viewpoint position='16.0328 13.056 34.2417' orientation='-0.624839 0.780206 0.0292506 0.543473' />
-					<Background skyColor='1 1 1'/>
-					
-				</Scene>
-			</X3D> -->
 		<X3D width="1350px" height="600px">
 			<Scene>
 				<NavigationInfo headlight='false'></NavigationInfo>
 				<Viewpoint description="Faceted box, smooth shading" position="0 0 25"></Viewpoint>
-				<PointLight DEF="Lamp1" color="1 1 0" location="0 0 0" radius="15"/></PointLight>
-				<!--<PointLight DEF="Lamp2" color="1 1 0" location="0 0 6" radius="15"/>
+				<PointLight id='point' on='TRUE' intensity='0.9000' color='0.9 0.9 0.9' location='0 0 0 ' radius='5000000' ></PointLight>
+				<Background backUrl='img/space.jpg'></Background>
 			
 				<!-- SOL -->
 				<Transform DEF='RotacionSol'>
-					<Shape DEF='Sol'>
+					<Shape DEF='Sol' id='Sol'>
 						<appearance>
 							<ImageTexture url="img/sun.jpg"/> 
-							<Material  emissiveColor='0.8 0.8 0.2' ambientIntensity='1.0'/>
+							<Material  emissiveColor='0.8 0.8 0.2' ambientIntensity='1.0' shininess='0.2'/>
 						</appearance>
-						<Sphere radius='6' solid='true'/>
+						<Sphere radius='6' solid='true' />
 					</Shape>
 				</Transform>
 				
@@ -37,8 +110,9 @@
 				<Transform DEF='OrbitaMercurio'>
 					<Transform DEF='DesplazaOrbitaMercurio' translation="-9.5 0 0">
 						<Transform DEF='RotacionMercurio'>
-							<Shape DEF='Mercurio'>
+							<Shape DEF='Mercurio' id='Mercurio'>
 								<appearance>
+									<Material DEF="MerMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/mercurio.jpg"/>
 								</appearance>
 								<Sphere radius='0.4' solid='true'/>
@@ -51,8 +125,9 @@
 				<Transform DEF='OrbitaVenus'>
 					<Transform DEF='DesplazaOrbitaVenus' translation="-12 0 0">
 						<Transform DEF='RotacionVenus'>
-							<Shape DEF='Venus'>
+							<Shape DEF='Venus' id='Venus'>
 								<appearance>
+									<Material DEF="VenMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/venus.jpg"/>
 								</appearance>
 								<Sphere radius='0.9' solid='true'/>
@@ -65,8 +140,9 @@
 				<Transform DEF='OrbitaTierra'>
 					<Transform DEF='DesplazaOrbitaTierra' translation="15 0 0">
 						<Transform DEF='RotacionTierra'>
-							<Shape DEF='Tierra'>
+							<Shape DEF='Tierra' id='Tierra'>
 								<appearance>
+									<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/earth.jpg"/>
 								</appearance>
 								<Sphere radius='1' solid='true'/>
@@ -79,7 +155,9 @@
 								<Transform DEF='RotacionLuna'>
 									<Shape DEF='Luna'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/moon.jpg"/>
+											<Material DEF="LunaMat" specularColor=".5 .5 .5"></Material>
 										</appearance>
 										<Sphere radius='0.3' solid='true'/>
 									</Shape>
@@ -93,8 +171,9 @@
 				<Transform DEF='OrbitaMarte'>
 					<Transform DEF='DesplazaOrbitaMarte' translation="-20 0 0">
 						<Transform DEF='RotacionMarte'>
-							<Shape DEF='Marte'>
+							<Shape DEF='Marte' id='Marte'>
 								<appearance>
+									<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/marte.jpg"/>
 								</appearance>
 								<Sphere radius='0.9' solid='true'/>
@@ -107,6 +186,7 @@
 								<Transform DEF='RotacionDeimos'>
 									<Shape DEF='Deimos'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/deimos.jpg"/>
 										</appearance>
 										<Sphere radius='0.2' solid='true'/>
@@ -120,6 +200,7 @@
 								<Transform DEF='RotacionFobos'>
 									<Shape DEF='Fobos'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/phobos.jpg"/>
 										</appearance>
 										<Sphere radius='0.4' solid='true'/>
@@ -133,8 +214,9 @@
 				<Transform DEF='OrbitaJupiter'>
 					<Transform DEF='DesplazaOrbitaJupiter' translation="-36 0 0">
 						<Transform DEF='RotacionJupiter'>
-							<Shape DEF='Jupiter'>
+							<Shape DEF='Jupiter' id='Jupiter'>
 								<appearance>
+									<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/jupiter.jpg"/>
 								</appearance>
 								<Sphere radius='3' solid='true'/>
@@ -146,6 +228,7 @@
 								<Transform DEF='RotacionIo'>
 									<Shape DEF='Io'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/io.jpg"/>
 										</appearance>
 										<Sphere radius='0.3' solid='true'/>
@@ -159,6 +242,7 @@
 								<Transform DEF='RotacionEuropa'>
 									<Shape DEF='Europa'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/europa.jpg"/>
 										</appearance>
 										<Sphere radius='0.2' solid='true'/>
@@ -172,6 +256,7 @@
 								<Transform DEF='RotacionGanimedes'>
 									<Shape DEF='Ganimedes'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/ganimedes.jpg"/>
 										</appearance>
 										<Sphere radius='0.5' solid='true'/>
@@ -185,6 +270,7 @@
 								<Transform DEF='RotacionCalisto'>
 									<Shape DEF='Calisto'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/calisto.jpg"/>
 										</appearance>
 										<Sphere radius='0.4' solid='true'/>
@@ -198,8 +284,9 @@
 				<Transform DEF='OrbitaSaturno'>
 					<Transform DEF='DesplazaOrbitaSaturno' translation="44 0 0">
 						<Transform DEF='RotacionSaturno'>
-							<Shape DEF='Saturno'>
+							<Shape DEF='Saturno' id='Saturno'>
 								<appearance>
+									<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/saturno.jpg"/>
 								</appearance>
 								<Sphere radius='1.5' solid='true'/>
@@ -218,8 +305,9 @@
 				<Transform DEF='OrbitaUrano'>
 					<Transform DEF='DesplazaOrbitaUrano' translation="-52 0 0">
 						<Transform DEF='RotacionUrano'>
-							<Shape DEF='Urano'>
+							<Shape DEF='Urano' id='Urano'>
 								<appearance>
+									<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>	
 									<ImageTexture url="img/urano.png"/>
 								</appearance>
 								<Sphere radius='1.1' solid='true'/>
@@ -238,6 +326,7 @@
 								<Transform DEF='RotacionMiranda'>
 									<Shape DEF='Miranda'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/miranda.jpg"/>
 										</appearance>
 										<Sphere radius='0.1' solid='true'/>
@@ -251,6 +340,7 @@
 								<Transform DEF='RotacionAriel'>
 									<Shape DEF='Ariel'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/ariel.jpg"/>
 										</appearance>
 										<Sphere radius='0.3' solid='true'/>
@@ -264,6 +354,7 @@
 								<Transform DEF='RotacionUmbriel'>
 									<Shape DEF='Umbriel'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/umbriel.jpg"/>
 										</appearance>
 										<Sphere radius='0.3' solid='true'/>
@@ -277,6 +368,7 @@
 								<Transform DEF='RotacionTitania'>
 									<Shape DEF='Titania'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/titania.jpg"/>
 										</appearance>
 										<Sphere radius='0.5' solid='true'/>
@@ -290,6 +382,7 @@
 								<Transform DEF='RotacionOberon'>
 									<Shape DEF='Oberon'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/oberon.jpg"/>
 										</appearance>
 										<Sphere radius='0.4' solid='true'/>
@@ -303,8 +396,9 @@
 				<Transform DEF='OrbitaNeptuno'>
 					<Transform DEF='DesplazaOrbitaNeptuno' translation="58 0 0">
 						<Transform DEF='RotacionNeptuno'>
-							<Shape DEF='Neptuno'>
+							<Shape DEF='Neptuno' id='Neptuno'>
 								<appearance>
+									<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 									<ImageTexture url="img/neptuno.jpg"/>
 								</appearance>
 								<Sphere radius='1' solid='true'/>
@@ -316,6 +410,7 @@
 								<Transform DEF='RotacionTriton'>
 									<Shape DEF='Triton'>
 										<appearance>
+											<Material DEF="TieMat" specularColor=".5 .5 .5"></Material>
 											<ImageTexture url="img/triton.jpg"/>
 										</appearance>
 										<Sphere radius='0.4' solid='true'/>
@@ -326,23 +421,30 @@
 					</Transform>
 				</Transform>
 				
+				
+				
+				<!--USS ENTERPRISE -->
+				<Transform DEF='Nave' translation="0 -10 0">
+					<!--<Material DEF="TieMat" specularColor=".5 .5 .5"></Material> -->
+					<inline url="nave.x3d"  translation="0 0 0"> </inline> 
+				</Transform>
 					
 				
-				<TimeSensor DEF='clockSol' cycleInterval='80' loop='true'/>
-				<TimeSensor DEF='clockRotacion' cycleInterval='5' loop='true'/>
-				<TimeSensor DEF='clockOrbitaMercurio' cycleInterval='10' loop='true'/>
-				<TimeSensor DEF='clockOrbitaVenus' cycleInterval='20' loop='true'/>
-				<TimeSensor DEF='clockOrbitaTierra' cycleInterval='30' loop='true'/>
-				<TimeSensor DEF='clockOrbitaMarte' cycleInterval='35' loop='true'/>
-				<TimeSensor DEF='clockOrbitaJupiter' cycleInterval='40' loop='true'/>
+				<TimeSensor DEF='clockSol' id='clockSol' cycleInterval='80' loop='true' enabled='true' />
+				<TimeSensor DEF='clockRotacion' id='clockRotacion' cycleInterval='5' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaMercurio' id='clockMercurio' cycleInterval='10' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaVenus' id='clockVenus' cycleInterval='20' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaTierra' id='clockTierra' cycleInterval='30' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaMarte' id='clockMarte' cycleInterval='35' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaJupiter' id='clockJupiter' cycleInterval='40' loop='true' enabled='true' />
 				<TimeSensor DEF='clockOrbitaSatelite1' cycleInterval='2' loop='true'/>
 				<TimeSensor DEF='clockOrbitaSatelite2' cycleInterval='5' loop='true'/>
 				<TimeSensor DEF='clockOrbitaSatelite3' cycleInterval='8' loop='true'/>
-				<TimeSensor DEF='clockOrbitaSaturno' cycleInterval='50' loop='true'/>
-				<TimeSensor DEF='clockOrbitaUrano' cycleInterval='55' loop='true'/>
-				<TimeSensor DEF='clockOrbitaNeptuno' cycleInterval='50' loop='true'/>
+				<TimeSensor DEF='clockOrbitaSaturno' id='clockSaturno' cycleInterval='50' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaUrano' id='clockUrano' cycleInterval='55' loop='true' enabled='true' />
+				<TimeSensor DEF='clockOrbitaNeptuno' id='clockNeptuno' cycleInterval='50' loop='true' enabled='true' />
 				
-				<OrientationInterpolator DEF='interRotacion' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
+				<OrientationInterpolator DEF='interRotacion'  key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
 				<OrientationInterpolator DEF='interRotacionEjePlaneta' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
 				<OrientationInterpolator DEF='interOrbitaMercurio' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
 				<OrientationInterpolator DEF='interOrbitaVenus' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
