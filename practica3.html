@@ -4,11 +4,14 @@
 		<title> Practica3.1 SG </title>
         <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
 		<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'/>
+		<link href="./css/style.css" rel="stylesheet" type='text/css' />
 	</head>
 	</head>
 	
 	<script type="text/javascript">
+		
 		document.onload = function() {
+		
 		//CLICK SOL
 		document.getElementById('Sol').addEventListener('click',
 			function() { 
@@ -81,14 +84,12 @@
 				else
 					document.getElementById('clockNeptuno').setAttribute('enabled', 'true');
 			}, false);
-		
-
 		};
 	</script>
 	
        
 	<body>		
-		<X3D width="1350px" height="600px">
+		<X3D id="the_element">
 			<Scene>
 				<NavigationInfo headlight='false'></NavigationInfo>
 				<Viewpoint description="Faceted box, smooth shading" position="0 0 25"></Viewpoint>
@@ -443,7 +444,22 @@
 				<TimeSensor DEF='clockOrbitaSaturno' id='clockSaturno' cycleInterval='50' loop='true' enabled='true' />
 				<TimeSensor DEF='clockOrbitaUrano' id='clockUrano' cycleInterval='55' loop='true' enabled='true' />
 				<TimeSensor DEF='clockOrbitaNeptuno' id='clockNeptuno' cycleInterval='50' loop='true' enabled='true' />
+				<TimeSensor DEF='clockTrasNave' id='clockNave' cycleInterval='20' loop='true' enabled='true' />
+
+				<!-- Interpolator nave -->
+				<PositionInterpolator DEF='moveNave' key='0.0 0.125  0.25 0.375 0.50 0.625 0.75 0.875 1.0' keyValue='-20 -5 20  -20 -5 -20  -20 -5 -20  20 -5 -20  20 -5 -20  20 -5 20  20 -5 20  -20 -5 20  -20 -5 20'> </PositionInterpolator>
+				<Route fromNode='clockTrasNave' fromField ='fraction_changed' toNode='moveNave' toField='set_fraction'> </Route> 
+				<Route fromNode='moveNave' fromField ='value_changed' toNode='Nave' toField='translation'> </Route>
 				
+				<OrientationInterpolator DEF='rotNave'  key='0.0 0.125  0.25 0.375 0.50 0.625 0.75 0.875 1.0' keyValue='0 1 0 0	 			0 1 0 0
+																														0 1 0 -1.57079  	0 1 0 -1.57079
+																														0 1 0 -3.14159  	0 1 0 -3.14159  
+																														0 1 0 -4.71239		0 1 0 -4.71239
+																														0 1 0 0'/>
+				<Route fromNode='clockTrasNave' fromField ='fraction_changed' toNode='rotNave' toField='set_fraction'> </Route> 
+				<Route fromNode='rotNave' fromField ='value_changed' toNode='Nave' toField='set_rotation'> </Route>
+				
+				<!-- Interpolator planetas -->
 				<OrientationInterpolator DEF='interRotacion'  key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
 				<OrientationInterpolator DEF='interRotacionEjePlaneta' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
 				<OrientationInterpolator DEF='interOrbitaMercurio' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'/>
@@ -559,6 +575,7 @@
 				<ROUTE fromNode='clockOrbitaSatelite2' fromField='fraction_changed' toNode='interOrbitaTriton' toField='set_fraction'></ROUTE>
 				<ROUTE fromNode='interOrbitaTriton' fromField='value_changed' toNode='OrbitaTriton' toField='set_rotation'></ROUTE>
 				
+				<AudioClip url='music.mp3' loop='true' enabled='true' />
 			</Scene>
 		</X3D>
 	</body>
